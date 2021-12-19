@@ -7,14 +7,14 @@ const useStyle=makeStyles({
     container:{
         width:'50%',
         margin:'5% 0 0 25%',
-        '& > *':20s
+        '& > *':20
 
     }
 });
 
 const initialValue={
-    name:'',
-    username:'',
+    name:'Your Full Name',
+    roll:'Your Roll',
     phone:'',
     email:'',    
 }
