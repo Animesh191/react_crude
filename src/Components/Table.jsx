@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom';
 
 export default function BasicTable(props) {
     const {users,handleDelete}=props; 
+    console.log(users);
     return (
     <TableContainer component={Paper}>
       <Table >
@@ -25,7 +26,7 @@ export default function BasicTable(props) {
         <TableBody>
           {users.map((row) => (
             <TableRow
-              key={row._id}
+              key={row.id}
               
             >
               <TableCell >
@@ -35,9 +36,9 @@ export default function BasicTable(props) {
               <TableCell align="right">{row.phone}</TableCell>
               <TableCell align="right">{row.email}</TableCell>
               <TableCell>
-                <Button variant="contained" color="primary" component={Link} to={`/edit/${row._id}`}>Edit</Button>
+                <Button variant="contained" color="primary" component={Link} to={`/edit/${row.id}`}>Edit</Button>
                 &nbsp;
-                <Button variant="contained" color="secondary" onClick={()=>handleDelete(row._id)} >Delete</Button>
+                <Button variant="contained" color="secondary" onClick={()=>handleDelete(row.id)} >Delete</Button>
               </TableCell>
             </TableRow>
           ))}

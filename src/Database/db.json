@@ -1,25 +1,46 @@
 {
   "users": [
     {
-      "name": "Shashank",
-      "username": "secret_shadow",
-      "phone": "123456",
-      "email": "ani@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "Animesh",
-      "username": "armoured_titan",
-      "phone": "8303724424",
-      "email": "ani@gmail.com",
-      "id": 4
-    },
-    {
       "name": "Rajat",
       "username": "darkstar@18",
       "phone": "8303724424",
       "email": "rj@gmail.com",
       "id": 5
+    },
+    {
+      "name": "animesh19",
+      "username": "EC2019041064",
+      "phone": "1234567890",
+      "email": "AS.SHARMA.CR7@GMAIL.COM",
+      "id": 6
+    },
+    {
+      "name": "cowiscow",
+      "username": "EC2019041064",
+      "phone": "1234567890",
+      "email": "t",
+      "id": 7
+    },
+    {
+      "name": "cowiscow",
+      "username": "EC2019041064",
+      "phone": "1234567890",
+      "email": "t",
+      "id": 8
+    },
+    {
+      "name": "animesh19",
+      "username": "",
+      "phone": "",
+      "email": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "username": "",
+      "phone": "",
+      "email": "",
+      "id": 10
     }
   ]
 }

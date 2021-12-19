@@ -1,6 +1,6 @@
 import {FormGroup,FormControl,Input,InputLabel,Button,makeStyles, Typography} from '@material-ui/core';
 import {useState} from 'react';
-import { adduser } from '../Service/api';
+import { adduser,getusers } from '../Service/api';
 import {useNavigate} from 'react-router-dom';
 
 const useStyle=makeStyles({
@@ -28,19 +28,32 @@ function AddUser(){
         setUser({...user,[e.target.name]:e.target.value});
         console.log(user);
     }
-
+    var x=1;
     const handleSubmit=async ()=>{
-
+        const users=await getusers();
+        users.data.forEach(ruser=>{
+            for(var prop in ruser)
+            if(ruser[prop]==user[prop])
+            {   
+                x=0;
+                alert(`${prop} already exists`);
+                
+                return;
+            }
+        });
+        if(x==0)
+        return;
+        
         const res=await adduser(user);
-        // if(res.statusText==='Created')
-        // {
-        //     alert('User Added');
-        //     history('/all')
-        // }
-        // else
-        // {
-        //     alert('Invalid Data');
-        // }
+        if(res.statusText==='Created')
+        {
+            alert('User Added');
+            history('/all')
+        }
+        else
+        {
+            alert('Invalid Data');
+        }
     }
     return(
         <>
@@ -48,7 +61,7 @@ function AddUser(){
                 <Typography variant='h4'>Add User</Typography>
                 <FormControl>
                     <InputLabel>Name</InputLabel>
-                    <Input name="name" onChange={e=>handleInput(e)}></Input>
+                    <Input name="name" onChange={e=>handleInput(e)} ></Input>
                 </FormControl>
                 <FormControl>
                     <InputLabel>Username</InputLabel>
